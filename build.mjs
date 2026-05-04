@@ -1,15 +1,18 @@
-// 빌드 스크립트: book/*.md → dist/*.html
+// 빌드 스크립트: book/*.md → docs/*.html
 // 의존성 없음. node 24+ 표준 라이브러리만 사용.
+//
+// 출력 폴더가 'docs/'인 이유: GitHub Pages가 main 브랜치의 docs/ 폴더를
+// 정적 사이트 소스로 자동 인식합니다 (Settings → Pages → main /docs).
 //
 // 사용법:
 //   node build.mjs
 //
 // 산출물:
-//   dist/index.html, contents.html, about.html
-//   dist/parts/{1..5}.html
-//   dist/chapters/{slug}.html
-//   dist/styles/* (복사)
-//   dist/scripts/* (복사)
+//   docs/index.html, contents.html, about.html
+//   docs/parts/{1..5}.html
+//   docs/chapters/{slug}.html
+//   docs/styles/* (복사)
+//   docs/scripts/* (복사)
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -18,7 +21,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const BOOK = path.join(__dirname, 'book');
 const SRC = __dirname;
-const DIST = path.join(__dirname, 'dist');
+const DIST = path.join(__dirname, 'docs');
 
 // ---------- 메타데이터 (book/00_목차.md 기반으로 수동 작성) ----------
 
@@ -687,7 +690,7 @@ function copyDir(src, dest) {
 
 function build() {
   console.log('🔨 Building site...');
-  // Clean dist
+  // Clean output (docs/)
   fs.rmSync(DIST, { recursive: true, force: true });
   ensureDir(DIST);
 
@@ -720,7 +723,7 @@ function build() {
 
   console.log(`\n✅ Build complete. Output: ${DIST}`);
   console.log(`   Open ${path.join(DIST, 'index.html')} in your browser, or run:`);
-  console.log(`   npx http-server src/dist -p 8000`);
+  console.log(`   npx http-server docs -p 8000`);
 }
 
 build();

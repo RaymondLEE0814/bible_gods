@@ -12,15 +12,29 @@
 node build.mjs
 
 # 2) 로컬 서버
-npx http-server dist -p 8000
+npx http-server docs -p 8000
 # 또는
-python -m http.server 8000 -d dist
+python -m http.server 8000 -d docs
 
 # 3) 또는 더블클릭으로 바로 열기
-#    Windows 탐색기 → dist/index.html
+#    Windows 탐색기 → docs/index.html
 ```
 
 브라우저에서 [http://localhost:8000](http://localhost:8000)으로 접속하면 26개 페이지(홈 1 + 목차 1 + 소개 1 + 부 5 + 챕터 18)를 볼 수 있습니다.
+
+## GitHub Pages 호스팅
+
+이 저장소는 **main 브랜치 / `docs/` 폴더 방식**으로 GitHub Pages에 배포됩니다.
+
+1. 빌드 결과가 `docs/`에 생성됨 (이 폴더가 그대로 git에 커밋되어 있어야 함)
+2. GitHub 저장소 → Settings → Pages
+3. **Source**: `Deploy from a branch`
+4. **Branch**: `main` / **Folder**: `/docs`
+5. Save → 약 1~2분 후 `https://<username>.github.io/bible_gods/`에서 라이브
+
+콘텐츠를 수정하려면: `book/*.md` 또는 `styles/*` 편집 → `node build.mjs` → `git add docs && git commit && git push` → Pages가 자동 재배포.
+
+> 참고: 무료 GitHub 계정의 Pages는 **Public 저장소에서만** 동작합니다. Private 저장소에서 Pages를 쓰려면 GitHub Pro가 필요합니다.
 
 ## 폴더 구조
 
@@ -37,7 +51,7 @@ bible_gods/
 │   └── layout.css         ← 컨테이너·반응형·접근성
 ├── scripts/
 │   └── nav.js             ← 모바일 메뉴, 스크롤 진행도, 섹션 TOC
-└── dist/                  ← 빌드 산출물 (정적 호스팅 가능)
+└── docs/                  ← 빌드 산출물 (GitHub Pages 소스 폴더)
     ├── index.html
     ├── contents.html
     ├── about.html
