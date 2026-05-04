@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소개 — 성경의 우상들</title>
+<meta name="description" content="책의 목적, 리서치 방법론, 디자인 시스템에 관하여.">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/typography.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="styles/layout.css">
+<meta property="og:title" content="소개 — 성경의 우상들">
+<meta property="og:description" content="책의 목적, 리서치 방법론, 디자인 시스템에 관하여.">
+<meta property="og:type" content="article">
+</head>
+<body class="page-about">
+<a href="#main" class="skip-link">본문 바로가기</a>
+<header class="topnav">
+  <div class="topnav__inner">
+    <a href="index.html" class="topnav__brand" aria-label="성경의 우상들 — 홈">
+      <span class="topnav__brand-mark">우</span>
+      <span>성경의 우상들</span>
+    </a>
+    <nav class="topnav__tabs" aria-label="메인 내비게이션">
+      <a href="index.html" class="topnav__tab">홈</a>
+      <a href="contents.html" class="topnav__tab">목차</a>
+      <a href="about.html" class="topnav__tab topnav__tab--active">소개</a>
+    </nav>
+    <div class="topnav__utility">
+      <a href="chapters/rachel-teraphim.html">읽기 시작</a>
+    </div>
+    <button class="topnav__menu-btn" data-menu-toggle aria-label="메뉴 열기" aria-controls="mobile-sheet">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h12M2 8h12M2 12h12"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-sheet__scrim" data-mobile-scrim></div>
+<aside class="mobile-sheet" id="mobile-sheet" data-mobile-sheet aria-label="모바일 메뉴">
+  <button class="mobile-sheet__close" data-mobile-close aria-label="메뉴 닫기">×</button>
+  <ul class="mobile-sheet__list">
+    <li><a href="index.html">홈</a></li>
+    <li><a href="contents.html">목차</a></li>
+    <li><a href="about.html">소개</a></li>
+    <li><a href="chapters/rachel-teraphim.html">1장부터 읽기</a></li>
+  </ul>
+</aside>
+
+<main id="main">
+
+<section class="section">
+  <div class="container container--reading">
+    <span class="eyebrow">소개</span>
+    <h1 class="hero__title" style="text-align:left;font-size:36px">성경의 우상들에 관하여</h1>
+
+    <div class="reading-body mt-xl">
+      <p>이 책은 성경에 등장하는 이방 우상 모두를 한 챕터씩 추적한다. 라헬이 훔친 작은 흙 인형부터 사도 요한이 묘사한 666의 표에 이르기까지, 약 2,000년에 걸친 우상 숭배의 역사를 고고학·고대 근동학·헬레니즘 사료로 재구성했다.</p>
+
+      <h2 id="research">리서치 방법론</h2>
+      <p>본 책은 5부 리서치 자료(<code>report/deep_research/01~05_*.md</code>)를 토대로 한다. 각 챕터의 모든 사실관계는 1차 사료(점토판, 비석, 발굴 보고서)와 동료평가 학술 문헌에서 비롯되었으며, 본문에 등장하는 모든 인용·연대·지명은 원본 리서치 범위 안에서만 다룬다.</p>
+
+      <p>주요 1차 사료:</p>
+      <ul>
+        <li>누지 점토판(BC 15세기, 후르리 가족법)</li>
+        <li>우가릿 점토판 / 라스 샴라(BC 14~13세기, 가나안 신화)</li>
+        <li>메사 석비(BC 9세기, 모압 그모스)</li>
+        <li>카르타고 토펫 발굴(BC 8~2세기, 인신 제사)</li>
+        <li>쿤틸렛 아즈루드 비문(BC 9세기 후반)</li>
+        <li>에누마 엘리쉬(BC 12세기 정형, 바벨론 창조 서사시)</li>
+        <li>고레스 원통(BC 539, 페르시아 정복 칙령)</li>
+        <li>버가모 제우스 대제단(BC 2세기, 헬레니즘 부조)</li>
+      </ul>
+
+      <h2 id="design">디자인 시스템</h2>
+      <p>이 사이트는 <a href="https://airbnb.design">Airbnb의 디자인 시스템</a>을 도서 맥락으로 매핑하여 구축되었다. 흰 캔버스에 단일 강조색(Rausch #ff385c), 모듈화된 그림자, 둥근 모서리, 모디스트 타이포그래피의 원칙을 그대로 따른다.</p>
+
+      <p>주요 컴포넌트 매핑:</p>
+      <ul>
+        <li>property-card → chapter-card (챕터 카드)</li>
+        <li>experience-card → part-card (부 카드)</li>
+        <li>reservation-card → reading-toc (독서 사이드바)</li>
+        <li>rating-display-card → chapter-num-display (챕터 번호 디스플레이)</li>
+      </ul>
+
+      <h2>저작권과 사용</h2>
+      <p>본문은 리서치 자료를 기반으로 작성된 창작 텍스트다. 무단 전재나 상업적 활용을 금하되, 학습·교육 목적의 인용은 출처를 명기하면 가능하다.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer__cols">
+    <div class="footer__col">
+      <h4>책</h4>
+      <ul>
+        <li><a href="contents.html">전체 목차</a></li>
+        <li><a href="about.html">책 소개</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>구조</h4>
+      <ul>
+        <li><a href="parts/1.html">1부 — 광야의 시작</a></li>
+        <li><a href="parts/2.html">2부 — 국가신들의 전쟁</a></li>
+        <li><a href="parts/3.html">3부 — 혼합주의의 절정</a></li>
+        <li><a href="parts/4.html">4부 — 제국의 그늘</a></li>
+        <li><a href="parts/5.html">5부 — 카이사르와 그리스도</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>방법론</h4>
+      <ul>
+        <li><a href="about.html#research">리서치 자료</a></li>
+        <li><a href="about.html#design">디자인 시스템</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__legal">
+    <span>© 2026 성경의 우상들 — 발굴된 신들의 역사</span>
+    <span>한국어 · ko-KR</span>
+  </div>
+</footer>
+
+<script src="scripts/nav.js"></script>
+</body>
+</html>

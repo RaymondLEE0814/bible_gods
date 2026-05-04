@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Design Tokens — Airbnb 디자인 시스템 (agent/design.md 그대로)
+   ========================================================================== */
+
+:root {
+  /* ---------- Colors: Brand & Accent ---------- */
+  --color-primary:          #ff385c;  /* Rausch */
+  --color-primary-active:   #e00b41;  /* Rausch Active */
+  --color-primary-disabled: #ffd1da;  /* Rausch Disabled */
+  --color-luxe:             #460479;  /* Luxe Purple */
+  --color-plus:             #92174d;  /* Plus Magenta */
+
+  /* ---------- Colors: Surface ---------- */
+  --color-canvas:         #ffffff;
+  --color-surface-soft:   #f7f7f7;
+  --color-surface-strong: #f2f2f2;
+
+  /* ---------- Colors: Hairlines & Borders ---------- */
+  --color-hairline:       #dddddd;
+  --color-hairline-soft:  #ebebeb;
+  --color-border-strong:  #c1c1c1;
+
+  /* ---------- Colors: Text ---------- */
+  --color-ink:        #222222;
+  --color-body:       #3f3f3f;
+  --color-muted:      #6a6a6a;
+  --color-muted-soft: #929292;
+  --color-on-primary: #ffffff;
+  --color-star:       #222222;
+
+  /* ---------- Colors: Semantic ---------- */
+  --color-error:       #c13515;
+  --color-error-hover: #b32505;
+  --color-legal-link:  #428bff;
+
+  /* ---------- Colors: Scrim ---------- */
+  --color-scrim: rgba(0, 0, 0, 0.5);
+
+  /* ---------- Spacing (4px base, 2px micro) ---------- */
+  --space-xxs:     2px;
+  --space-xs:      4px;
+  --space-sm:      8px;
+  --space-md:      12px;
+  --space-base:    16px;
+  --space-lg:      24px;
+  --space-xl:      32px;
+  --space-xxl:     48px;
+  --space-section: 64px;
+
+  /* ---------- Radius ---------- */
+  --radius-sm:   8px;    /* buttons, inputs */
+  --radius-md:   14px;   /* property cards */
+  --radius-xl:   32px;   /* category strips */
+  --radius-full: 9999px; /* pill, circle */
+
+  /* ---------- Elevation (단일 그림자 톤) ---------- */
+  --shadow-card:
+    rgba(0, 0, 0, 0.02) 0 0 0 1px,
+    rgba(0, 0, 0, 0.04) 0 2px 6px 0,
+    rgba(0, 0, 0, 0.10) 0 4px 8px 0;
+
+  /* ---------- Typography: Family ---------- */
+  /* Cereal/Circular 부재 시 Pretendard + Inter + 시스템 한글 폰트 */
+  --font-family:
+    "Pretendard Variable", Pretendard,
+    "Inter",
+    -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+    "Helvetica Neue", "Segoe UI", sans-serif;
+
+  /* ---------- Layout ---------- */
+  --container-max:     1280px;  /* 홈/에디토리얼 */
+  --container-reading: 720px;   /* 챕터 본문 */
+  --container-narrow:  1080px;  /* 상세 페이지 */
+
+  /* ---------- Breakpoints (참조용 — 미디어쿼리에서 직접 px 사용) ---------- */
+  --bp-mobile:  744px;
+  --bp-tablet:  1128px;
+  --bp-desktop: 1440px;
+
+  /* ---------- Top nav 높이 (sticky 계산용) ---------- */
+  --topnav-height: 80px;
+}
+
+/* Pretendard 웹폰트 — jsdelivr (한국어 가독성용). 네트워크 차단 시 시스템 폰트로 폴백 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");

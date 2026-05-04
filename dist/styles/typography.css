@@ -1,0 +1,222 @@
+/* ==========================================================================
+   Typography — agent/design.md Hierarchy 표 그대로
+   Cereal VF 부재 → Pretendard/Inter (line-height -2% 보정 권고)
+   ========================================================================== */
+
+/* ---------- Base reset ---------- */
+html {
+  font-family: var(--font-family);
+  color: var(--color-ink);
+  background: var(--color-canvas);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font: 400 16px/1.5 var(--font-family);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+/* ---------- Token utility classes ---------- */
+.t-rating-display {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.t-display-xl {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.43;
+  letter-spacing: 0;
+}
+
+.t-display-lg {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.44px;
+}
+
+.t-display-md {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.43;
+  letter-spacing: 0;
+}
+
+.t-display-sm {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.20;
+  letter-spacing: -0.18px;
+}
+
+.t-title-md {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.t-title-sm {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.t-body-md {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.t-body-sm {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+}
+
+.t-caption {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+}
+
+.t-caption-sm {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.23;
+}
+
+.t-badge {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.18;
+}
+
+.t-micro-label {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.33;
+}
+
+.t-uppercase-tag {
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+}
+
+.t-button-md {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.t-button-sm {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+}
+
+.t-link {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+}
+
+.t-nav-link {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* ---------- Color utilities ---------- */
+.c-ink   { color: var(--color-ink); }
+.c-body  { color: var(--color-body); }
+.c-muted { color: var(--color-muted); }
+.c-muted-soft { color: var(--color-muted-soft); }
+.c-primary { color: var(--color-primary); }
+.c-on-primary { color: var(--color-on-primary); }
+
+/* ---------- Reading body — 챕터 본문 전용 ---------- */
+/* 모달/셀에서 쓰는 14px 기본 대신 17px 본문 사용 (장문 가독성).
+   Airbnb는 마켓플레이스용이라 14~16px 본문이 표준이지만,
+   장문 도서 본문은 17px가 적절. design.md가 명시적으로 금지하지 않으므로
+   body-md 토큰의 변형으로 사용. */
+.reading-body {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--color-body);
+  letter-spacing: -0.01em;
+}
+
+.reading-body p {
+  margin: 0 0 var(--space-lg) 0;
+}
+
+.reading-body h2 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-ink);
+  margin: var(--space-xxl) 0 var(--space-base) 0;
+  letter-spacing: -0.01em;
+}
+
+.reading-body h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-ink);
+  margin: var(--space-xl) 0 var(--space-sm) 0;
+}
+
+.reading-body h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: var(--space-lg) 0 var(--space-xs) 0;
+}
+
+.reading-body strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.reading-body em {
+  font-style: italic;
+}
+
+.reading-body a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.reading-body a:hover {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
+}
+
+.reading-body hr {
+  border: 0;
+  border-top: 1px solid var(--color-hairline-soft);
+  margin: var(--space-xl) 0;
+}
+
+.reading-body ol,
+.reading-body ul {
+  margin: 0 0 var(--space-lg) 0;
+  padding-left: var(--space-lg);
+}
+
+.reading-body ol li,
+.reading-body ul li {
+  margin-bottom: var(--space-sm);
+}
